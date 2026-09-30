@@ -1,11 +1,31 @@
 /**
  * WebsiteNI Starter Theme
  * Typography.
+ *
+ * Font families are controlled in app/assets.php via --font-body and
+ * --font-heading. Keep the structure here consistent between projects and
+ * adjust the project-specific type scale only when the design calls for it.
  */
 
 
 /**
+ * Base typography.
+ */
+
+body {
+	font-family: var(--font-body);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.6;
+	text-rendering: optimizeLegibility;
+}
+
+
+/**
  * Headings.
+ *
+ * clamp() gives each project a fluid, responsive starting scale without
+ * requiring breakpoint-specific font sizes for normal content headings.
  */
 
 h1,
@@ -14,7 +34,12 @@ h3,
 h4,
 h5,
 h6 {
+	margin-top: 0;
 	margin-bottom: 25px;
+	font-family: var(--font-heading);
+	font-weight: 600;
+	line-height: 1.15;
+	text-wrap: balance;
 
 	&.uppercase {
 		text-transform: uppercase;
@@ -34,25 +59,101 @@ h6 {
 }
 
 h1 {
-	line-height: 1;
+	font-size: clamp(2.5rem, 5vw, 4.5rem);
+	line-height: 1.05;
 }
 
-h2,
-h3,
-h4,
-h5,
+h2 {
+	font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+	font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+h4 {
+	font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+h5 {
+	font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+}
+
 h6 {
-	line-height: 1.1;
+	font-size: clamp(1rem, 1.25vw, 1.125rem);
 }
 
 
 /**
- * Paragraphs.
+ * Body copy.
  */
 
+p,
+ul,
+ol,
+dl,
+blockquote {
+	font-size: 1rem;
+}
+
 p {
+	margin-top: 0;
 	margin-bottom: 20px;
 	line-height: 1.6;
+}
+
+ul,
+ol {
+	line-height: 1.6;
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+small,
+.small {
+	font-size: .875rem;
+	line-height: 1.5;
+}
+
+
+/**
+ * Intro / lead copy.
+ */
+
+.lead {
+	font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+	line-height: 1.5;
+}
+
+
+/**
+ * Eyebrow / pre-heading copy.
+ */
+
+.eyebrow {
+	margin-bottom: 12px;
+	font-family: var(--font-heading);
+	font-size: .75rem;
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+
+/**
+ * Useful text helpers.
+ */
+
+.text-balance {
+	text-wrap: balance;
+}
+
+.text-pretty {
+	text-wrap: pretty;
 }
 
 
@@ -102,15 +203,15 @@ p {
 /**
  * Large introductory paragraph.
  *
- * Usage:
- * <div class="pfirstof">...</div>
+ * Existing WebsiteNI utility retained for backwards compatibility.
+ * Usage: <div class="pfirstof">...</div>
  */
 
 .pfirstof {
 
 	p:first-of-type {
-		font-size: 20px;
-		line-height: 1.3;
+		font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+		line-height: 1.5;
 	}
 }
 
@@ -123,20 +224,5 @@ p {
 
 	p:last-of-type {
 		margin-bottom: 0;
-	}
-}
-
-
-/**
- * Medium.
- */
-
-@media screen and (min-width: 640px) {
-
-	.pfirstof {
-
-		p:first-of-type {
-			font-size: 22px;
-		}
 	}
 }

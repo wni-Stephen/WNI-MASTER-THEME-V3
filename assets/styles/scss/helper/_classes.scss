@@ -1,0 +1,260 @@
+/**
+ * WebsiteNI Starter Theme
+ * Utility classes.
+ */
+
+
+/**
+ * Accessibility.
+ */
+
+#skip-navigation-link {
+
+	a {
+		top: 10px;
+		left: 10px;
+		position: fixed;
+		padding: 10px 15px;
+		opacity: 0;
+		pointer-events: none;
+		background-color: get-color(black);
+		color: get-color(white);
+		text-decoration: none;
+		z-index: 999999;
+		transform: translateY(-150%);
+		transition:
+			opacity .2s ease,
+			transform .2s ease;
+
+		&:focus {
+			opacity: 1;
+			pointer-events: auto;
+			transform: translateY(0);
+		}
+	}
+}
+
+
+/**
+ * Background utilities.
+ */
+
+.bg-center {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+/**
+ * Sizing.
+ */
+
+.width100 {
+	width: 100%;
+}
+
+
+/**
+ * Position.
+ */
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+
+/**
+ * Flex.
+ */
+
+.wni-flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.wni-flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.wni-flex-wrap {
+	flex-wrap: wrap;
+}
+
+.wni-flex-nowrap {
+	flex-wrap: nowrap;
+}
+
+
+/**
+ * Flex justification.
+ */
+
+.wni-flex-justify-start {
+	justify-content: flex-start;
+}
+
+.wni-flex-justify-center {
+	justify-content: center;
+}
+
+.wni-flex-justify-between {
+	justify-content: space-between;
+}
+
+.wni-flex-justify-around {
+	justify-content: space-around;
+}
+
+.wni-flex-justify-evenly {
+	justify-content: space-evenly;
+}
+
+.wni-flex-justify-end {
+	justify-content: flex-end;
+}
+
+
+/**
+ * Flex alignment.
+ */
+
+.wni-flex-align-start {
+	align-items: flex-start;
+}
+
+.wni-flex-align-center {
+	align-items: center;
+}
+
+.wni-flex-align-end {
+	align-items: flex-end;
+}
+
+.wni-flex-align-stretch {
+	align-items: stretch;
+}
+
+
+/**
+ * Flex align-content.
+ *
+ * Used with multi-line flex containers.
+ */
+
+.wni-flex-content-start {
+	align-content: flex-start;
+}
+
+.wni-flex-content-center {
+	align-content: center;
+}
+
+.wni-flex-content-end {
+	align-content: flex-end;
+}
+
+.wni-flex-content-between {
+	align-content: space-between;
+}
+
+.wni-flex-content-around {
+	align-content: space-around;
+}
+
+.wni-flex-content-evenly {
+	align-content: space-evenly;
+}
+
+
+/**
+ * Text alignment.
+ */
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+
+/**
+ * Custom visibility helpers.
+ *
+ * Foundation already handles its standard
+ * breakpoints. These extend that pattern for
+ * XL and XXL project requirements.
+ */
+
+.hide-for-xl,
+.hide-for-xxl {
+	display: initial;
+}
+
+.show-for-xl,
+.show-for-xxl {
+	display: none;
+}
+
+
+/**
+ * Large.
+ */
+
+@media screen and (min-width: 1024px) {
+
+	.text-left-lg {
+		text-align: left;
+	}
+
+	.text-center-lg {
+		text-align: center;
+	}
+
+	.text-right-lg {
+		text-align: right;
+	}
+}
+
+
+/**
+ * XL.
+ */
+
+@media screen and (min-width: 1200px) {
+
+	.hide-for-xl {
+		display: none !important;
+	}
+
+	.show-for-xl {
+		display: initial !important;
+	}
+}
+
+
+/**
+ * XXL.
+ */
+
+@media screen and (min-width: 1440px) {
+
+	.hide-for-xxl {
+		display: none !important;
+	}
+
+	.show-for-xxl {
+		display: initial !important;
+	}
+}

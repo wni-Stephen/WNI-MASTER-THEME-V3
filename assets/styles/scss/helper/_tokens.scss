@@ -1,0 +1,153 @@
+/**
+ * WebsiteNI Design Tokens
+ *
+ * Exposes core SCSS theme values as CSS custom properties.
+ */
+
+@use 'sass:map';
+
+
+:root {
+
+	/**
+	 * Brand colours.
+	 */
+
+	--color-primary:
+		#{map.get(
+			$foundation-palette,
+			primary
+		)};
+
+	--color-secondary:
+		#{map.get(
+			$foundation-palette,
+			secondary
+		)};
+
+	--color-tertiary:
+		#{map.get(
+			$foundation-palette,
+			tertiary
+		)};
+
+	--color-quaternary:
+		#{map.get(
+			$foundation-palette,
+			quaternary
+		)};
+
+	--color-quinary:
+		#{map.get(
+			$foundation-palette,
+			quinary
+		)};
+
+	--color-senary:
+		#{map.get(
+			$foundation-palette,
+			senary
+		)};
+
+
+	/**
+	 * Semantic colours.
+	 */
+
+	--color-success:
+		#{map.get(
+			$foundation-palette,
+			success
+		)};
+
+	--color-warning:
+		#{map.get(
+			$foundation-palette,
+			warning
+		)};
+
+	--color-alert:
+		#{map.get(
+			$foundation-palette,
+			alert
+		)};
+
+	--color-info:
+		#{map.get(
+			$foundation-palette,
+			info
+		)};
+
+
+	/**
+	 * Neutral colours.
+	 */
+
+	--color-black:
+		#{map.get(
+			$foundation-palette,
+			black
+		)};
+
+	--color-white:
+		#{map.get(
+			$foundation-palette,
+			white
+		)};
+
+	--color-grey-light:
+		#{map.get(
+			$foundation-palette,
+			gray-light
+		)};
+
+	--color-grey:
+		#{map.get(
+			$foundation-palette,
+			gray
+		)};
+
+	--color-grey-dark:
+		#{map.get(
+			$foundation-palette,
+			gray-dark
+		)};
+
+
+	/**
+	 * Spacing.
+	 */
+
+	--spacing-xsmall: #{$spacingXSmall};
+	--spacing-small: #{$spacingSmall};
+	--spacing-medium: #{$spacingMedium};
+	--spacing-large: #{$spacingLarge};
+	--spacing-xlarge: #{$spacingXLarge};
+
+
+	/**
+	 * Layout.
+	 */
+
+	--container-width: #{$global-width};
+
+	--grid-gutter-small:
+		#{map.get(
+			$grid-column-gutter,
+			small
+		)};
+
+	--grid-gutter-medium:
+		#{map.get(
+			$grid-column-gutter,
+			medium
+		)};
+
+
+	/**
+	 * Transitions.
+	 */
+
+	--transition-base: #{$transition};
+	--transition-image: #{$imgTransition};
+}

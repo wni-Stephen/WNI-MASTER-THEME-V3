@@ -1,0 +1,57 @@
+/**
+ * WebsiteNI Starter Theme
+ * Effects.
+ */
+
+
+/**
+ * Main wrapper.
+ */
+
+.wrapper {
+	position: relative;
+	overflow: hidden;
+
+	.wrapper-inner {
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		transition:
+			transform .8s cubic-bezier(
+				.51,
+				.18,
+				0,
+				.88
+			),
+			opacity .5s cubic-bezier(
+				.51,
+				.18,
+				0,
+				.88
+			);
+	}
+
+
+	/**
+	 * Shift website content when
+	 * mobile navigation is open.
+	 */
+	&.hamburger-is-active {
+		width: 100%;
+		top: 0;
+		position: fixed;
+
+		.wrapper-inner {
+			transform:
+				translate3d(
+					calc(
+						100%
+						- 25px
+						- .625rem * 2
+					),
+					0,
+					0
+				);
+		}
+	}
+}

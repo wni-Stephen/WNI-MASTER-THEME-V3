@@ -1,0 +1,265 @@
+/**
+ * WebsiteNI Starter Theme
+ * Archives and post listings.
+ */
+
+
+/**
+ * Archive header.
+ */
+
+.archive-header {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.archive-title {
+	margin-bottom: 20px;
+}
+
+.archive-description {
+	max-width: 800px;
+
+	p {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+/**
+ * Archive content.
+ */
+
+.archive-content {
+	padding-bottom: 70px;
+}
+
+
+/**
+ * Post listing.
+ */
+
+.posts-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 30px;
+}
+
+
+/**
+ * Post card.
+ */
+
+.post-card {
+	height: 100%;
+	overflow: hidden;
+	border: 1px solid $light-gray;
+	background-color: get-color(white);
+}
+
+.post-card-link {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	color: inherit;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+
+		.post-card-title {
+			color: get-color(primary);
+		}
+
+		.post-card-image {
+
+			img {
+				transform: scale(1.03);
+			}
+		}
+	}
+}
+
+.post-card-image {
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+	background-color: $light-gray;
+
+	img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+		transition: transform .4s ease;
+	}
+}
+
+.post-card-content {
+	padding: 25px;
+}
+
+.post-card-title {
+	margin-bottom: 10px;
+	color: get-color(black);
+	transition: color .25s ease;
+}
+
+.post-card-date {
+	margin-bottom: 15px;
+	font-size: 14px;
+	color: $dark-gray;
+}
+
+.post-card-excerpt {
+
+	p {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.post-card-read-more {
+	margin-top: 20px;
+	display: inline-block;
+	font-weight: 600;
+	color: get-color(primary);
+}
+
+
+/**
+ * Sidebar.
+ */
+
+.posts-sidebar {
+	margin-top: 50px;
+}
+
+.posts-categories,
+.posts-archives {
+
+	h2 {
+		margin-bottom: 20px;
+	}
+
+	ul {
+		margin: 0;
+		list-style: none;
+	}
+
+	li {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid $light-gray;
+
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+		transition: color .25s ease;
+
+		&:hover,
+		&:focus {
+			color: get-color(primary);
+		}
+	}
+}
+
+.posts-archives {
+	margin-top: 40px;
+}
+
+
+/**
+ * Pagination.
+ */
+
+.pagination {
+	margin-top: 50px;
+
+	.nav-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.page-numbers {
+		min-width: 42px;
+		height: 42px;
+		padding-right: 12px;
+		padding-left: 12px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $light-gray;
+		color: get-color(black);
+		text-decoration: none;
+		transition:
+			background-color .25s ease,
+			border-color .25s ease,
+			color .25s ease;
+
+		&:hover,
+		&:focus,
+		&.current {
+			border-color: get-color(primary);
+			background-color: get-color(primary);
+			color: get-color(white);
+		}
+	}
+}
+
+
+/**
+ * Medium.
+ */
+
+@media screen and (min-width: 640px) {
+
+	.archive-header {
+		padding-top: 80px;
+		padding-bottom: 55px;
+	}
+
+	.archive-content {
+		padding-bottom: 90px;
+	}
+
+	.posts-list {
+		grid-template-columns:
+			repeat(
+				2,
+				minmax(0, 1fr)
+			);
+	}
+}
+
+
+/**
+ * Large.
+ */
+
+@media screen and (min-width: 1024px) {
+
+	.archive-header {
+		padding-top: 100px;
+		padding-bottom: 70px;
+	}
+
+	.archive-content {
+		padding-bottom: 120px;
+	}
+
+	.posts-sidebar {
+		margin-top: 0;
+		padding-left: 40px;
+	}
+}

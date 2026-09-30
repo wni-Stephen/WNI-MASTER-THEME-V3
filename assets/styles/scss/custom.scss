@@ -1,0 +1,257 @@
+/**
+ * WebsiteNI Starter Theme
+ * Custom styles.
+ */
+
+
+/**
+ * Helpers.
+ */
+
+@import 'helper/mixins';
+@import 'helper/variables';
+@import 'helper/tokens';
+@import 'helper/colours';
+@import 'helper/fonts';
+@import 'helper/classes';
+@import 'helper/effects';
+@import 'helper/forms';
+@import 'helper/search';
+
+
+
+/**
+ * Partials.
+ */
+
+@import 'partial/front-page';
+@import 'partial/page-contact';
+@import 'partial/404';
+@import 'partial/archive';
+@import 'partial/single';
+
+
+/**
+ * Layout.
+ */
+
+@import 'layout/header';
+@import 'layout/footer';
+
+
+/**
+ * Global styles.
+ */
+
+
+/**
+ * Prevent horizontal overflow.
+ */
+
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+
+/**
+ * Buttons.
+ */
+
+.button {
+	width: auto;
+	min-width: 130px;
+	height: 45px;
+	margin: 0;
+	padding: 0 30px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 45px;
+	background-color: get-color(primary);
+	color: get-color(white);
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	transition: $transition;
+
+	&:hover,
+	&:active,
+	&:focus {
+		border-color: get-color(secondary);
+		background-color: get-color(secondary);
+		color: get-color(white);
+	}
+
+
+	/**
+	 * Alignment.
+	 */
+	&.center {
+		margin-right: auto;
+		margin-left: auto;
+		display: flex;
+	}
+
+	&.right {
+		margin-right: 0;
+		margin-left: auto;
+		display: flex;
+	}
+
+
+	/**
+	 * Spacing.
+	 */
+	&.spacingtop {
+		margin-top: 40px;
+	}
+
+	&.spacingtop-res {
+		margin-top: 30px;
+	}
+
+
+	/**
+	 * Responsive button.
+	 */
+	&.resbutton {
+		width: 100%;
+	}
+
+
+	/**
+	 * Inverse.
+	 */
+	&.inverse {
+		background-color: get-color(secondary);
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-color: get-color(secondary);
+			background-color: get-color(white);
+			color: get-color(secondary);
+		}
+	}
+
+
+	/**
+	 * Inverse outline.
+	 */
+	&.inverseoutline {
+		border: 1px solid get-color(secondary);
+		background-color: transparent;
+		color: get-color(secondary);
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-color: get-color(secondary);
+			background-color: get-color(secondary);
+			color: get-color(white);
+		}
+	}
+
+
+	/**
+	 * White outline.
+	 */
+	&.whiteoutline {
+		border: 1px solid get-color(white);
+		background-color: transparent;
+		color: get-color(white);
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-color: get-color(secondary);
+			background-color: get-color(secondary);
+			color: get-color(white);
+		}
+	}
+}
+
+
+/**
+ * WordPress image alignment.
+ */
+
+img.alignright {
+	margin: 0 0 25px 25px;
+	float: right;
+}
+
+img.alignleft {
+	margin: 0 25px 25px 0;
+	float: left;
+}
+
+img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+
+
+/**
+ * Image hover movement.
+ */
+
+.imghovermove {
+
+	.image {
+		top: 0;
+		position: relative;
+		transition: $transition;
+	}
+
+	&:hover {
+
+		.image {
+			top: -6px;
+			box-shadow:
+				0 0 10px 0 rgba(
+					0,
+					0,
+					0,
+					.4
+				);
+		}
+	}
+}
+
+
+/**
+ * Large.
+ */
+
+@media screen and (min-width: 1024px) {
+
+	.button {
+
+		&.spacingtop-res {
+			margin-top: 40px;
+		}
+
+		&.resbutton {
+			width: fit-content;
+		}
+	}
+}

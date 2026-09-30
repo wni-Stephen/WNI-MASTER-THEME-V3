@@ -1,0 +1,142 @@
+/**
+ * WebsiteNI Starter Theme
+ * Typography.
+ */
+
+
+/**
+ * Headings.
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 25px;
+
+	&.uppercase {
+		text-transform: uppercase;
+	}
+
+	&.nomarginbottom {
+		margin-bottom: 0;
+	}
+
+	&.marginbottomsml {
+		margin-bottom: 10px;
+	}
+
+	&.marginbottomlrg {
+		margin-bottom: 35px;
+	}
+}
+
+h1 {
+	line-height: 1;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.1;
+}
+
+
+/**
+ * Paragraphs.
+ */
+
+p {
+	margin-bottom: 20px;
+	line-height: 1.6;
+}
+
+
+/**
+ * Content spacing.
+ */
+
+#content {
+
+	p {
+
+		img,
+		iframe {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+
+	ul + p,
+	ol + p {
+		margin-top: 20px;
+	}
+
+	p + h1,
+	p + h2,
+	p + h3,
+	p + h4,
+	p + h5,
+	p + h6,
+	ul + h1,
+	ul + h2,
+	ul + h3,
+	ul + h4,
+	ul + h5,
+	ul + h6,
+	ol + h1,
+	ol + h2,
+	ol + h3,
+	ol + h4,
+	ol + h5,
+	ol + h6 {
+		margin-top: 40px;
+	}
+}
+
+
+/**
+ * Large introductory paragraph.
+ *
+ * Usage:
+ * <div class="pfirstof">...</div>
+ */
+
+.pfirstof {
+
+	p:first-of-type {
+		font-size: 20px;
+		line-height: 1.3;
+	}
+}
+
+
+/**
+ * Remove margin from final paragraph.
+ */
+
+.plastof {
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+
+/**
+ * Medium.
+ */
+
+@media screen and (min-width: 640px) {
+
+	.pfirstof {
+
+		p:first-of-type {
+			font-size: 22px;
+		}
+	}
+}

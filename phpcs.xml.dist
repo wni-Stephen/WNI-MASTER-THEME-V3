@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ruleset name="WebsiteNI Starter Theme">
+
+	<description>
+		WordPress coding standards for the WebsiteNI starter theme.
+	</description>
+
+	<arg name="extensions" value="php"/>
+	<arg value="sp"/>
+
+	<file>.</file>
+
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/assets/dist/*</exclude-pattern>
+	<exclude-pattern>*/release/*</exclude-pattern>
+	<exclude-pattern>*/modules/class-tgm-plugin-activation.php</exclude-pattern>
+
+	<rule ref="WordPress"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="websiteni-foundation"/>
+			</property>
+		</properties>
+	</rule>
+
+</ruleset>

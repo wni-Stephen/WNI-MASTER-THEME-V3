@@ -1,0 +1,42 @@
+{
+  "name": "websiteni-starter-theme",
+  "version": "3.0.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0 <21 || >=22.12.0"
+  },
+  "description": "WebsiteNI WordPress starter theme",
+  "scripts": {
+    "dev": "vite build --watch",
+    "watch": "vite build --watch",
+    "build": "vite build",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:php",
+    "lint:js": "eslint assets/scripts",
+    "lint:css": "stylelint \"assets/styles/scss/**/*.scss\"",
+    "lint:php": "vendor/bin/phpcs"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "not IE 11"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "autoprefixer": "^10.6.1",
+    "eslint": "^10.11.0",
+    "foundation-sites": "^6.9.0",
+    "jquery": "^3.7.1",
+    "postcss": "^8.5.28",
+    "sass": "^1.104.1",
+    "stylelint": "^17.15.0",
+    "stylelint-config-recommended-scss": "^17.0.1",
+    "vite": "^8.3.0",
+    "what-input": "^5.2.12"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "hamburgers": "^1.2.1"
+  }
+}

@@ -1,0 +1,56 @@
+/**
+ * WebsiteNI Starter Theme
+ * Main stylesheet entry point.
+ */
+
+
+/**
+ * Foundation settings.
+ */
+
+@import 'settings';
+
+
+/**
+ * Foundation.
+ */
+
+@import '../../../node_modules/foundation-sites/scss/foundation';
+
+
+/**
+ * Foundation components.
+ */
+
+@include foundation-global-styles;
+
+@include foundation-xy-grid-classes;
+@include foundation-flex-classes;
+
+@include foundation-typography;
+@include foundation-forms;
+
+@include foundation-button;
+@include foundation-button-group;
+
+@include foundation-accordion;
+@include foundation-accordion-menu;
+
+@include foundation-close-button;
+
+@include foundation-label;
+
+@include foundation-responsive-embed;
+
+@include foundation-table;
+@include foundation-tabs;
+
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+
+
+/**
+ * WebsiteNI custom styles.
+ */
+
+@import 'custom';

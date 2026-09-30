@@ -1,0 +1,43 @@
+/**
+ * WebsiteNI Starter Theme
+ * Custom mixins.
+ */
+
+
+/**
+ * Pseudo element.
+ *
+ * Usage:
+ *
+ * &::before {
+ *     @include pseudo;
+ * }
+ */
+
+@mixin pseudo(
+	$position: absolute,
+	$display: block,
+	$content: ''
+) {
+	position: $position;
+	display: $display;
+	content: $content;
+}
+
+
+/**
+ * Truncate text to one line.
+ *
+ * Usage:
+ *
+ * @include truncate(300px);
+ */
+
+@mixin truncate(
+	$truncation-boundary
+) {
+	max-width: $truncation-boundary;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

@@ -1,0 +1,56 @@
+/**
+ * WebsiteNI Brand Settings
+ *
+ * Main project colour configuration.
+ *
+ * This should be one of the first files updated
+ * when starting a new WebsiteNI project.
+ */
+
+
+/**
+ * Brand colours.
+ */
+
+$brand-primary: #ff0000;
+$brand-secondary: #767676;
+$brand-tertiary: #ff6b6b;
+$brand-quaternary: #4d96ff;
+$brand-quinary: #ffb74d;
+$brand-senary: #8e44ad;
+
+
+/**
+ * Semantic colours.
+ *
+ * Normally remain consistent between projects.
+ */
+
+$semantic-success: #3adb76;
+$semantic-warning: #ffae00;
+$semantic-alert: #cc4b37;
+$semantic-info: #5bc0de;
+
+
+/**
+ * Project neutral palette.
+ */
+
+$palette-black: #0a0a0a;
+$palette-white: #ffffff;
+$palette-gray-light: #f5f5f5;
+$palette-gray: #cccccc;
+$palette-gray-dark: #666666;
+
+
+/**
+ * Foundation neutral colours.
+ *
+ * Used internally by Foundation components.
+ */
+
+$foundation-light-gray: #e6e6e6;
+$foundation-medium-gray: #cacaca;
+$foundation-dark-gray: #8a8a8a;
+$foundation-black: #0a0a0a;
+$foundation-white: #fefefe;

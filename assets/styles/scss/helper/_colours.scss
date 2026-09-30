@@ -1,0 +1,182 @@
+/**
+ * Created by WebsiteNI.
+ */
+
+@use "sass:map";
+@use "sass:color" as sass-color;
+
+
+/**
+ * _colours - Small.
+ */
+
+
+/**
+ * Base colours.
+ */
+
+$white: #ffffff;
+$mediumGrey: #cccccc;
+$black: #0a0a0a;
+
+
+/**
+ * Force child content to white.
+ */
+
+.fontcolourwhite {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	span,
+	a,
+	li,
+	div,
+	strong,
+	em {
+		color: $white;
+	}
+}
+
+
+/**
+ * Get a colour from the Foundation palette.
+ *
+ * Usage:
+ * color(primary)
+ */
+
+@function color($name) {
+	@return map.get(
+		$foundation-palette,
+		$name
+	);
+}
+
+
+/**
+ * Foundation palette utility classes.
+ */
+
+@each $name, $value in $foundation-palette {
+
+	/**
+	 * Convert colour-like map keys such as
+	 * black, white and gray into strings before
+	 * interpolating them into class names.
+	 */
+	$class-name: "" + $name;
+
+
+	/**
+	 * Background colours.
+	 */
+
+	.bg-#{$class-name} {
+		background-color: $value !important;
+	}
+
+
+	/**
+	 * Text colours.
+	 */
+
+	.text-#{$class-name} {
+		color: $value !important;
+	}
+
+
+	/**
+	 * Border colours.
+	 */
+
+	.border-#{$class-name} {
+		border-color: $value !important;
+	}
+
+
+	/**
+	 * Hover utilities.
+	 */
+
+	.hover\:bg-#{$class-name}:hover {
+		background-color: $value !important;
+	}
+
+	.hover\:text-#{$class-name}:hover {
+		color: $value !important;
+	}
+
+	.hover\:border-#{$class-name}:hover {
+		border-color: $value !important;
+	}
+
+
+	/**
+	 * Background gradients.
+	 */
+
+	.bg-gradient-#{$class-name} {
+		background:
+			linear-gradient(
+				45deg,
+				$value 0%,
+				sass-color.adjust(
+					$value,
+					$lightness: 15%
+				) 100%
+			);
+	}
+
+
+	/**
+	 * Individual border colours.
+	 */
+
+	.border-t-#{$class-name} {
+		border-top-color: $value !important;
+	}
+
+	.border-r-#{$class-name} {
+		border-right-color: $value !important;
+	}
+
+	.border-b-#{$class-name} {
+		border-bottom-color: $value !important;
+	}
+
+	.border-l-#{$class-name} {
+		border-left-color: $value !important;
+	}
+
+
+	/**
+	 * Background + text colour combinations.
+	 */
+
+	.bg-#{$class-name}-text-white {
+		background-color: $value !important;
+		color: color(white) !important;
+	}
+
+	.bg-#{$class-name}-text-black {
+		background-color: $value !important;
+		color: color(black) !important;
+	}
+
+
+	/**
+	 * Text decoration colours.
+	 */
+
+	.underline-#{$class-name} {
+		text-decoration-color: $value !important;
+	}
+}
+
+

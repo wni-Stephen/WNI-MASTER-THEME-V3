@@ -1,0 +1,199 @@
+/**
+ * WebsiteNI Starter Theme
+ * Single posts.
+ */
+
+
+/**
+ * Header.
+ */
+
+.single-header {
+	padding-top: 60px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid $light-gray;
+}
+
+
+/**
+ * Breadcrumbs.
+ */
+
+.single-breadcrumbs {
+	margin-bottom: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+		transition: color .25s ease;
+
+		&:hover,
+		&:focus {
+			color: get-color(primary);
+		}
+	}
+
+	[aria-current='page'] {
+		color: $dark-gray;
+	}
+}
+
+
+/**
+ * Title and meta.
+ */
+
+.single-title {
+	max-width: 1000px;
+	margin-bottom: 20px;
+}
+
+.single-meta {
+	margin-bottom: 0;
+	color: $dark-gray;
+}
+
+
+/**
+ * Content.
+ */
+
+.single-content {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.single-featured-image {
+	margin-bottom: 40px;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+
+.single-entry-content {
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+
+/**
+ * Previous / next posts.
+ */
+
+.single-post-navigation {
+	padding-top: 30px;
+	padding-bottom: 60px;
+	border-top: 1px solid $light-gray;
+
+	.nav-links {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.nav-previous,
+	.nav-next {
+
+		a {
+			display: flex;
+			flex-direction: column;
+			color: inherit;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+
+				.post-nav-title {
+					color: get-color(primary);
+				}
+			}
+		}
+	}
+
+	.post-nav-label {
+		margin-bottom: 5px;
+		font-size: 13px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+		color: $dark-gray;
+	}
+
+	.post-nav-title {
+		font-size: 18px;
+		font-weight: 600;
+		transition: color .25s ease;
+	}
+}
+
+
+/**
+ * Medium.
+ */
+
+@media screen and (min-width: 640px) {
+
+	.single-header {
+		padding-top: 80px;
+		padding-bottom: 55px;
+	}
+
+	.single-content {
+		padding-top: 65px;
+		padding-bottom: 65px;
+	}
+
+	.single-post-navigation {
+
+		.nav-links {
+			grid-template-columns:
+				repeat(
+					2,
+					minmax(0, 1fr)
+				);
+		}
+
+		.nav-next {
+			text-align: right;
+		}
+	}
+}
+
+
+/**
+ * Large.
+ */
+
+@media screen and (min-width: 1024px) {
+
+	.single-header {
+		padding-top: 100px;
+		padding-bottom: 70px;
+	}
+
+	.single-content {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.single-post-navigation {
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+}

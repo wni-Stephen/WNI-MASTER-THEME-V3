@@ -3,7 +3,7 @@
  * Theme helper functions.
  */
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 
 /**
@@ -13,11 +13,11 @@ defined('ABSPATH') || exit;
  *
  * @return string
  */
-function websiteni_joints_excerpt($limit = 20) {
+function websiteni_joints_excerpt( $limit = 20 ) {
 
-	$limit = absint($limit);
+	$limit = absint( $limit );
 
-	if (!$limit) {
+	if ( ! $limit ) {
 		return '';
 	}
 
@@ -51,7 +51,7 @@ function websiteni_joints_comment_form_comment_field_to_bottom(
 	$fields
 ) {
 
-	if (empty($fields['comment'])) {
+	if ( empty( $fields['comment'] ) ) {
 		return $fields;
 	}
 
@@ -90,13 +90,13 @@ function websiteni_joints_get_layout_settings() {
 	 * ACF Extended Settings Modal.
 	 */
 	if (
-		function_exists('have_settings')
+		function_exists( 'have_settings' )
 		&& have_settings()
 	) {
 
 		$options = array();
 
-		while (have_settings()) {
+		while ( have_settings() ) {
 
 			the_setting();
 
@@ -116,10 +116,6 @@ function websiteni_joints_get_layout_settings() {
 				'padding_bottom' => get_sub_field(
 					'padding_bottom'
 				),
-
-				'extra_class' => get_sub_field(
-					'extra_class'
-				),
 			);
 		}
 
@@ -134,13 +130,13 @@ function websiteni_joints_get_layout_settings() {
 	 * to use a grouped Clone field called
 	 * "layout_options".
 	 */
-	if (function_exists('get_sub_field')) {
+	if ( function_exists( 'get_sub_field' ) ) {
 
 		$options = get_sub_field(
 			'layout_options'
 		);
 
-		if (is_array($options)) {
+		if ( is_array( $options ) ) {
 			return $options;
 		}
 	}
@@ -165,7 +161,7 @@ function websiteni_joints_get_layout_options(
 	$options = array()
 ) {
 
-	if (!is_array($options)) {
+	if ( ! is_array( $options ) ) {
 		$options = array();
 	}
 
@@ -187,7 +183,7 @@ function websiteni_joints_get_layout_options(
 	);
 
 	if (
-		!empty($options['background'])
+		! empty( $options['background'] )
 		&& in_array(
 			$options['background'],
 			$backgrounds,
@@ -211,7 +207,7 @@ function websiteni_joints_get_layout_options(
 	);
 
 	if (
-		!empty($options['padding_top'])
+		! empty( $options['padding_top'] )
 		&& isset(
 			$padding_top[
 				$options['padding_top']
@@ -237,7 +233,7 @@ function websiteni_joints_get_layout_options(
 	);
 
 	if (
-		!empty($options['padding_bottom'])
+		! empty( $options['padding_bottom'] )
 		&& isset(
 			$padding_bottom[
 				$options['padding_bottom']
@@ -252,36 +248,11 @@ function websiteni_joints_get_layout_options(
 
 
 	/**
-	 * Additional custom CSS classes.
-	 */
-	if (!empty($options['extra_class'])) {
-
-		$extra_classes = preg_split(
-			'/\s+/',
-			trim(
-				$options['extra_class']
-			)
-		);
-
-		foreach ($extra_classes as $extra_class) {
-
-			$extra_class = sanitize_html_class(
-				$extra_class
-			);
-
-			if ($extra_class) {
-				$classes[] = $extra_class;
-			}
-		}
-	}
-
-
-	/**
 	 * Optional section ID.
 	 */
 	$section_id = '';
 
-	if (!empty($options['section_id'])) {
+	if ( ! empty( $options['section_id'] ) ) {
 
 		$section_id = sanitize_title(
 			$options['section_id']

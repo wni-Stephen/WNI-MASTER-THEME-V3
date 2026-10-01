@@ -86,29 +86,6 @@ function websiteni_joints_theme_setup() {
 	);
 
 
-	/**
-	 * WooCommerce support.
-	 */
-	add_theme_support(
-		'woocommerce'
-	);
-
-
-	/**
-	 * WooCommerce product gallery features.
-	 */
-	add_theme_support(
-		'wc-product-gallery-zoom'
-	);
-
-	add_theme_support(
-		'wc-product-gallery-lightbox'
-	);
-
-	add_theme_support(
-		'wc-product-gallery-slider'
-	);
-
 
 	/**
 	 * Register navigation menu locations.

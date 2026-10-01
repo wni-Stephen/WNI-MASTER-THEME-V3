@@ -140,6 +140,134 @@
 
 
 		/**
+	 * Mobile navigation.
+	 */
+		$('.hamburger').on('click', function () {
+
+			const $button = $(this);
+			const $navigation = $('.navigation-overlay');
+
+			const isOpen = !$button.hasClass(
+				'is-active'
+			);
+
+
+			$button.toggleClass(
+				'is-active',
+				isOpen
+			);
+
+
+			$button.attr(
+				'aria-expanded',
+				isOpen ? 'true' : 'false'
+			);
+
+
+			$button.attr(
+				'aria-label',
+				isOpen ? 'Close menu' : 'Open menu'
+			);
+
+
+			$navigation.toggleClass(
+				'is-active',
+				isOpen
+			);
+
+
+			$navigation.attr(
+				'aria-hidden',
+				isOpen ? 'false' : 'true'
+			);
+
+
+			$('.wrapper').toggleClass(
+				'hamburger-is-active',
+				isOpen
+			);
+
+
+			$('body').toggleClass(
+				'mobile-nav-is-active',
+				isOpen
+			);
+
+
+			if (isOpen) {
+
+				$navigation
+					.find('.close')
+					.first()
+					.trigger('focus');
+			}
+		});
+
+
+		/**
+		 * Close mobile navigation.
+		 */
+		$('.navigation-overlay .close').on(
+			'click',
+			function (event) {
+
+				event.preventDefault();
+
+
+				$('.navigation-overlay')
+					.removeClass('is-active')
+					.attr(
+						'aria-hidden',
+						'true'
+					);
+
+
+				$('.wrapper').removeClass(
+					'hamburger-is-active'
+				);
+
+
+				$('body').removeClass(
+					'mobile-nav-is-active'
+				);
+
+
+				$('.hamburger')
+					.removeClass('is-active')
+					.attr({
+						'aria-expanded': 'false',
+						'aria-label': 'Open menu',
+					});
+
+
+				/**
+				 * Reset open submenus when the
+				 * main navigation closes.
+				 */
+				$('.submenu-toggle').attr(
+					'aria-expanded',
+					'false'
+				);
+
+
+				$('.navigation-overlay .sub-menu')
+					.removeClass(
+						'sub-menu-is-active'
+					)
+					.attr(
+						'aria-hidden',
+						'true'
+					);
+
+
+				$('.hamburger').trigger(
+					'focus'
+				);
+			}
+		);
+
+
+		/**
 		 * Close mobile navigation with Escape.
 		 */
 		$(document).on(
@@ -156,15 +284,9 @@
 					$('.navigation-overlay .close').trigger(
 						'click'
 					);
-
-
-					$('.hamburger').trigger(
-						'focus'
-					);
 				}
 			}
 		);
-
 
 		/**
 		 * Mobile navigation submenus.
